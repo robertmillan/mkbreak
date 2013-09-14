@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="a.b.c.d" android:versionCode="0" android:versionName="0" android:sharedUserId="android.uid.system" >
+<application android:hasCode="false" android:debuggable="true" >
+<activity android:name="android.app.Activity">
+<intent-filter>
+<action android:name="android.intent.action.MAIN"/>
+<category android:name="android.intent.category.LAUNCHER"/>
+</intent-filter>
+</activity>
+</application>
+</manifest>
+
