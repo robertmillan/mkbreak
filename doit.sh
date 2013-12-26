@@ -18,7 +18,7 @@ fi
 SDK="$1"
 MAKE=$(which gmake || which make)
 
-export PATH=${SDK}/platform-tools:${SDK}/build-tools/17.0.0:$PATH
+export PATH=${SDK}/platform-tools:${SDK}/build-tools/android-4.4:$PATH
 
 which adb aapt jdb unzip python ${MAKE}
 
