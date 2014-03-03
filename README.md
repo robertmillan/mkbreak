@@ -5,7 +5,7 @@ Generic exploit for master key vulnerability in Android
 
 * Download and install Android SDK from https://developer.android.com/sdk/index.html
 
-* Download Superuser from http://androidsu.com/superuser/ then place Superuser.apk and "su" binary for your architecture (usually ARM) in the checkout directory
+* Download Superuser from http://androidsu.com/superuser/ then place Superuser.apk and "su" binary for your architecture (usually ARM) in the checkout directory (the same directory doit.sh is in). They should be su and Superuser.apk. Actual download are signed zips, you may unzip and move the files to the dir.
 
 * Connect your device to USB and enable USB debugging mode. This changes for different versions of Android:
 
