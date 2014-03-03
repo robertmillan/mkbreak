@@ -15,10 +15,17 @@ if [ ! "$1" ] ; then
 	exit 1
 fi
 
+if [ ! \( -f su -a -f Superuser.apk \) ] ; then
+	echo "Must place Superuser.apk and su binaries in this directory"
+	exit 1
+fi
+
 SDK="$1"
 MAKE=$(which gmake || which make)
+TOOLS=$(ls -1d ${SDK}/build-tools/* | head -n 1)
 
-export PATH=${SDK}/platform-tools:${SDK}/build-tools/android-4.4:$PATH
+echo $TOOLS
+export PATH=${SDK}/platform-tools:${TOOLS}:$PATH
 
 which adb aapt jdb unzip python ${MAKE}
 
@@ -57,7 +64,7 @@ system_dev=$(adb shell mount | grep " /system " | cut -d ' ' -f 1)
 adb shell mount -o remount,rw ${system_dev} /system
 adb push su /system/xbin
 adb shell chmod 6755 /system/xbin/su
-adb shell install Supersu.apk
+adb push Superuser.apk /system/app/
 adb shell rm /data/local.prop
 
 adb_reboot
