@@ -65,7 +65,7 @@ adb shell mount -o remount,rw ${system_dev} /system
 adb push su /system/xbin
 adb shell chmod 6755 /system/xbin/su
 adb push Superuser.apk /system/app/
-adb shell rm /data/local.prop
+adb shell rm /data/local.prop /sdcard/rootme.sh /data/app/a.b.c.d-1.apk
 
 adb_reboot
 
