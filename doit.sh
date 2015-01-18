@@ -24,10 +24,23 @@ SDK="$1"
 MAKE=$(which gmake || which make)
 TOOLS=$(ls -1d ${SDK}/build-tools/* | head -n 1)
 
-echo $TOOLS
+echo "Android SDK tools found at: $TOOLS"
 export PATH=$PATH:${SDK}/platform-tools:${TOOLS}
 
-which adb aapt jdb unzip python ${MAKE}
+function check_cmd()
+{
+	if ! which $1 > /dev/null ; then
+		echo "Missing $1 (hint: install $2)" >&2
+		exit 1
+	fi
+}
+
+check_cmd adb android-tools-adb
+check_cmd aapt "Android SDK"
+check_cmd jdb "openjdk-7-jdk and openjdk-7-dbg"
+check_cmd unzip unzip
+check_cmd python python
+check_cmd make "GNU make"
 
 ${MAKE} SDK=${SDK}
 

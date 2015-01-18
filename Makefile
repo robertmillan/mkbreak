@@ -7,6 +7,8 @@ abcd.apk: AndroidManifest.xml
 	aapt p -I $(SDK)/platforms/android-8/android.jar -f -F $@ -M $<
 
 Settings.apk:
+	@echo "Waiting for device. Plug the USB cable if it isn't already"
+	adb wait-for-device
 	adb pull /system/app/Settings.apk
 
 evil-Settings.apk: Settings.apk abcd.apk
