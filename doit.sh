@@ -25,7 +25,7 @@ MAKE=$(which gmake || which make)
 TOOLS=$(ls -1d ${SDK}/build-tools/* | head -n 1)
 
 echo $TOOLS
-export PATH=${SDK}/platform-tools:${TOOLS}:$PATH
+export PATH=$PATH:${SDK}/platform-tools:${TOOLS}
 
 which adb aapt jdb unzip python ${MAKE}
 
