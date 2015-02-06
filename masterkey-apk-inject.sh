@@ -10,6 +10,7 @@ INJECT="$2"
 if [ ! -f "$PLATFORM" ]; then echo "ERROR: $PLATFORM does not exist" ; exit 1; fi
 if [ ! -f "$INJECT" ]; then echo "ERROR: $INJECT does not exist" ; exit 1; fi
 
+rm -rf tmp
 mkdir tmp
 cd tmp
 unzip ../$PLATFORM
