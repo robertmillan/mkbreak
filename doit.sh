@@ -36,7 +36,7 @@ function check_cmd()
 }
 
 check_cmd adb android-tools-adb
-check_cmd aapt "Android SDK"
+check_cmd aapt aapt
 check_cmd jdb "openjdk-7-jdk and openjdk-7-dbg"
 check_cmd unzip unzip
 check_cmd python python
