@@ -12,7 +12,7 @@ Settings.apk:
 	adb pull /system/app/Settings.apk
 
 evil-Settings.apk: Settings.apk abcd.apk
-	./masterkey-apk-inject.sh Settings.apk abcd.apk
+	PATH=$(PATH) ./masterkey-apk-inject.sh Settings.apk abcd.apk
 
 clean:
 	rm -f abcd.apk Settings.apk evil-Settings.apk *~
