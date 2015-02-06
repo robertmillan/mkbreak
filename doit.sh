@@ -20,7 +20,7 @@ if [ ! \( -f su -a -f Superuser.apk \) ] ; then
 	exit 1
 fi
 
-SDK="$1"
+SDK="$(readlink -f $1)"
 MAKE=$(which gmake || which make)
 TOOLS=$(ls -1d ${SDK}/build-tools/* | head -n 1)
 
